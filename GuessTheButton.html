@@ -18,9 +18,9 @@
       <div>
         <div class="distanceButtons">
           <div class="buttonDistance">
-            <button type="button" class="btn btn-secondary btn-lg" id="1" onclick="return button1()">Button 1</button>
-            <button type="button" class="btn btn-secondary btn-lg" id="2" onclick="return button2()">Button 2</button>
-            <button type="button" class="btn btn-secondary btn-lg" id="3" onclick="return button3()">Button 3</button>
+            <button type="button" class="btn btn-secondary btn-lg" id="1" onclick="return button1(this.id)">Button 1</button>
+            <button type="button" class="btn btn-secondary btn-lg" id="2" onclick="return button1(this.id)">Button 2</button>
+            <button type="button" class="btn btn-secondary btn-lg" id="3" onclick="return button1(this.id)">Button 3</button>
           </div>
         </div>
       </div>
@@ -28,30 +28,12 @@
 
     <script>
       var winnerButton = Math.floor(Math.random() * 3) + 1;
-      function button1() {
-        var button1 = 1;
-        if (winnerButton == button1) {
-          alert("Congratulation, You Won!!!")
+      function button1(clicked_id) {
+        var a = clicked_id;
+        if (winnerButton == a) {
+          alert("Congratulation, you won!");
         } else {
-          alert("Wrong Button! Don't worry, I know you can win next time! The winner button was: Button " + winnerButton)
-        }
-      }
-
-      function button2() {
-        var button2 = 2;
-        if (winnerButton == button2) {
-          alert("Congratulation, You Won!!!")
-        } else {
-          alert("Wrong Button! Don't worry, I know you can win next time! The winner button was: Button " + winnerButton)
-        }
-      }
-
-      function button3() {
-        var button3 = 3;
-        if (winnerButton == button3) {
-          alert("Congratulation, You Won!!!")
-        } else {
-          alert("Wrong Button! Don't worry, I know you can win next time! The winner button was: Button " + winnerButton)
+          alert("Wrong button! The winner button is: Button " + winnerButton +". Better luck next time!");
         }
       }
     </script>
