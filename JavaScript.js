@@ -1,7 +1,6 @@
 var winnerButton = Math.floor(Math.random() * 3) + 1;
-function button1(clicked_id) {
-  var clickedButton = clicked_id;
-  if (winnerButton == clickedButton) {
+function button(clicked_id) {
+  if (winnerButton == clicked_id) {
     $('#removePrevText').remove();
     $('#winOrLose').append(`
       <div id="removePrevText">
