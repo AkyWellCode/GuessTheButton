@@ -1,22 +1,14 @@
-var winnerButton = Math.floor(Math.random() * 3) + 1;
+var randomButton = Math.floor(Math.random() * 3) + 1, winnerButton = randomButton.toString(), winOrLose = document.getElementById("winOrLose"), text = document.createElement("text");
 function button(clicked_id) {
-  if (winnerButton == clicked_id) {
-    $('#removePrevText').remove();
-    $('#winOrLose').append(`
-      <div id="removePrevText">
-        <div class="font">
-        <p id="win" style="color:blue; font-size:35px;"> Congratulation, you won! </p>
-        </div>
-      </div>
-      `);
+  if (winnerButton === clicked_id) {
+    text.innerHTML = "Congratulation, you won!";
+    text.style.color = "blue";
+    text.style.fontSize = "x-large";
+    winOrLose.append(text);
   } else {
-    $('#removePrevText').remove();
-    $('#winOrLose').append(`
-      <div id="removePrevText">
-        <div class="font">
-          <p id="lose" style="color:red; font-size:35px;"> Wrong button! The winner button was: Button `+ winnerButton +`. Better luck next time! </p>
-        </div>
-      </div>
-      `);
+    text.innerHTML = "Wrong button! The correct button is: Button " + winnerButton + ". Better luck next time!";
+    text.style.color = "red";
+    text.style.fontSize = "x-large";
+    winOrLose.append(text);
   }
 }
