@@ -1,4 +1,5 @@
 var randomButton = Math.floor(Math.random() * 3) + 1, winnerButton = randomButton.toString(), winOrLose = document.getElementById("winOrLose"), text = document.createElement("text");
+
 function button(clicked_id) {
   if (winnerButton === clicked_id) {
     text.innerHTML = "Congratulation, you won!";
